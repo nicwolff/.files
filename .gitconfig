@@ -1,0 +1,82 @@
+[user]
+	name = Nic Wolff
+	email = nwolff@hearst.com
+[alias]
+	st = status -sb
+	pr = pull --rebase
+	co = checkout
+	back = checkout '@{-2}'
+	cb = ! sh -c 'git checkout --no-track -b $1 origin/master' -
+        ct = ! git fetch && git checkout -t
+        cf = checkout -f
+	br = branch
+	cp = cherry-pick
+	cm = commit -m
+	ci = commit -a -m
+	pad = add -p
+	mn = merge --no-ff
+	dc = diff --cached
+	amend = commit -a --amend -C HEAD
+	pp = ! git fetch && git rebase -p origin/master && git push
+	pop = stash pop
+	dw = diff -w
+	dww = diff -w --color-words
+	up = ! git stash && git rebase -p origin/master && git stash pop
+	this = ! git init && git add . && git commit -m \"Initial commit\"
+	rd = ! git ls-files -z --deleted | xargs -0 git rm
+	delete-merged = ! git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+	blast = ! [ `git symbolic-ref HEAD` != refs/heads/master ] && git co -f && git co master && git branch -D '@{-1}'
+	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
+	fp = format-patch
+	ml = merge '@{-1}'
+	mm = ! git checkout master && git merge --no-ff '@{-1}'
+	lh = log -n 10
+	lp = log -p -n 10
+	lg = log --graph --all -40
+	rh = reset HEAD^
+	rhh = reset --hard HEAD^
+	r5 = rebase -i HEAD~5
+	dm = diff -w -U1 origin/master...
+	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
+	remotes = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
+[core]
+	whitespace = fix
+	pager = less -S
+	preloadindex = true
+[format]
+	pretty = format:%C(green)%h%Creset %C(bold yellow)%an%Creset  %s  %C(cyan)%d%Creset %C(magenta)%ad (%ar)%Creset
+[log]
+	date = short
+[diff]
+	mnemonicprefix = true
+	color-words = true
+	context = 1
+[color]
+	diff = always
+	status = auto
+	branch = auto
+	ui = auto
+[color "branch"]
+	current = cyan bold
+	local = white 
+	remote = green
+[color "diff"]
+	meta = yellow
+	frag = cyan
+	old = magenta
+	new = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[push]
+	default = current
+[tig]
+	tab-size = 4
+	editor-line-number = no
+[advice]
+	statusHints = false
+[branch]
+	autosetupmerge = true
+[merge]
+	conflictstyle = diff3
