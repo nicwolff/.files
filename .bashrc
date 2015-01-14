@@ -27,6 +27,8 @@ alias bench='hmperl -Ilib -MBenchmark'
 alias jdm='git diff -U1 master... | jiradiff.pl'
 alias xr='xargs rmate'
 
+bind 'set show-all-if-ambiguous on'
+bind 'set completion-ignore-case on'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
