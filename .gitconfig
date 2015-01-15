@@ -35,7 +35,8 @@
 	lg = log --graph --all -40
 	rh = reset HEAD^
 	rhh = reset --hard HEAD^
-	r5 = rebase -i HEAD~5
+	r5 = rebase -i -p HEAD~5
+	r10 = rebase -i -p HEAD~10
 	dm = diff -w -U1 origin/master...
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
 	remotes = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
