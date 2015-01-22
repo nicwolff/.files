@@ -4,3 +4,4 @@ TAB: menu-complete
 "\e[B": history-search-forward
 set completion-ignore-case on
 set completion-map-case on
+set match-hidden-files off
