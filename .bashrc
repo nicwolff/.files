@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Source local definitions
+if [ -f .bashrc.local ]; then
+	. .bashrc.local
+fi
+
 # User specific aliases and functions
 
 alias l='ls -l'
