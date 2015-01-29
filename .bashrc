@@ -39,6 +39,8 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
+export IGNOREEOF=2
+
 export PROMPT_HOSTNAME=${NICKNAME-$HOSTNAME}
 printf "\033]0;%s\007" "$PROMPT_HOSTNAME"
 PROMPT_COMMAND='history -a;__git_ps1 "\[\e[0;32m\]$PROMPT_HOSTNAME:\[\e[1;32m\]\w\[\e[0;33m\]" " \[\e[1;32m\]\\\$\[\e[m\] "'
