@@ -81,3 +81,5 @@
 	autosetupmerge = true
 [merge]
 	conflictstyle = diff3
+[include]
+    path = .gitconfig.local
