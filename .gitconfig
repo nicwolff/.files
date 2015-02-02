@@ -24,7 +24,6 @@
 	up = ! git stash && git rebase -p origin/develop && git stash pop
 	this = ! git init && git add . && git commit -m \"Initial commit\"
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
-	delete-merged = ! git branch --merged | grep -v ^\* | xargs -n 1 git branch -d
 	blast = ! [ `git symbolic-ref HEAD` != refs/heads/develop ] && git co -f && git co develop && git branch -D '@{-1}'
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
 	fp = format-patch
