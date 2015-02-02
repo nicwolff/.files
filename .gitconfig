@@ -6,9 +6,10 @@
 	pr = pull --rebase
 	co = checkout
 	back = checkout '@{-2}'
-	cb = ! sh -c 'git checkout --no-track -b $1 origin/master' -
-        ct = ! git fetch && git checkout -t
-        cf = checkout -f
+	cb = ! sh -c 'git checkout --no-track -b $1 origin/develop' -
+	ct = ! git fetch && git checkout -t
+	cf = checkout -f
+	po = ! sh -c 'git fetch origin $1:$1' -
 	br = branch
 	cp = cherry-pick
 	cm = commit -m
@@ -17,15 +18,14 @@
 	mn = merge --no-ff
 	dc = diff --cached
 	amend = commit -a --amend -C HEAD
-	pp = ! git fetch && git rebase -p origin/master && git push
 	pop = stash pop
 	dw = diff -w
 	dww = diff -w --color-words
-	up = ! git stash && git rebase -p origin/master && git stash pop
+	up = ! git stash && git rebase -p origin/develop && git stash pop
 	this = ! git init && git add . && git commit -m \"Initial commit\"
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
 	delete-merged = ! git branch --merged | grep -v ^\* | xargs -n 1 git branch -d
-	blast = ! [ `git symbolic-ref HEAD` != refs/heads/master ] && git co -f && git co master && git branch -D '@{-1}'
+	blast = ! [ `git symbolic-ref HEAD` != refs/heads/develop ] && git co -f && git co develop && git branch -D '@{-1}'
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
 	fp = format-patch
 	ml = merge '@{-1}'
@@ -38,6 +38,7 @@
 	r5 = rebase -i -p HEAD~5
 	r10 = rebase -i -p HEAD~10
 	dm = diff -w -U1 origin/master...
+	dd = diff -w -U1 origin/develop...
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
 	remotes = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
 [core]
@@ -81,3 +82,5 @@
 	autosetupmerge = true
 [merge]
 	conflictstyle = diff3
+[include]
+	path = .gitconfig.local
