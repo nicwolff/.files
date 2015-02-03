@@ -9,7 +9,7 @@
 	cb = ! sh -c 'git checkout --no-track -b $1 origin/develop' -
 	ct = ! git fetch && git checkout -t
 	cf = checkout -f
-	po = ! sh -c 'git fetch origin $1:$1' -
+	fo = ! sh -c 'git fetch origin $1:$1' -
 	br = branch
 	cp = cherry-pick
 	cm = commit -m
