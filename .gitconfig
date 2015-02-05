@@ -21,7 +21,7 @@
 	pop = stash pop
 	dw = diff -w
 	dww = diff -w --color-words
-	up = ! git stash && git rebase -p origin/develop && git stash pop
+	up = ! git stash && git fetch origin develop:develop && git rebase -p develop && git stash pop
 	this = ! git init && git add . && git commit -m \"Initial commit\"
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
 	blast = ! [ `git symbolic-ref HEAD` != refs/heads/develop ] && git co -f && git co develop && git branch -D '@{-1}'
