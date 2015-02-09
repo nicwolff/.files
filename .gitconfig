@@ -10,6 +10,8 @@
 	ct = ! git fetch && git checkout -t
 	cf = checkout -f
 	fo = ! sh -c 'git fetch origin $1:$1' -
+	fd = fetch origin develop:develop
+	fm = fetch origin master:master
 	br = branch
 	cp = cherry-pick
 	cm = commit -m
