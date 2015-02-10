@@ -30,6 +30,7 @@
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
 	fp = format-patch
 	ml = merge '@{-1}'
+	md = ! git checkout develop && git merge --no-ff '@{-1}'
 	mm = ! git checkout master && git merge --no-ff '@{-1}'
 	lh = log -n 10
 	lp = log -p -n 10
