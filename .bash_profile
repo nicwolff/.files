@@ -13,4 +13,7 @@ export PATH
 
 # Send VT100 "Report Device OK" every 60 seconds to keep SSH from timing out
 notidle() { printf "\033[0n"; sleep 60; notidle; }
-{ notidle 2>&3 & } 3>&2 2>/dev/null
+PARENT=$(cat /proc/$PPID/status | head -1 | cut -f2)
+if [ $PARENT = "sshd" ]; then
+	{ notidle 2>&3 & } 3>&2 2>/dev/null
+fi
