@@ -34,7 +34,7 @@
 	mm = ! git checkout master && git merge --no-ff '@{-1}'
 	lh = log -n 10
 	lp = log -p -n 10
-	lg = log --graph --all -40
+	lg = log --graph --all
 	rh = reset HEAD^
 	rhh = reset --hard HEAD^
 	r5 = rebase -i -p HEAD~5
