@@ -77,7 +77,6 @@
 	default = current
 [tig]
 	tab-size = 4
-	editor-line-number = no
 [advice]
 	statusHints = false
 [branch]
