@@ -29,6 +29,7 @@
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
 	blast = ! [ `git symbolic-ref HEAD` != refs/heads/develop ] && git co -f && git co develop && git branch -D '@{-1}'
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
+    pf = push -f
 	fp = format-patch
 	ml = merge '@{-1}'
 	md = ! git checkout develop && git merge --no-ff '@{-1}'
