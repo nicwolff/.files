@@ -49,6 +49,7 @@
 	whitespace = fix
 	pager = less -S
 	preloadindex = true
+	excludesfile = ~/.gitignore
 [format]
 	pretty = format:%C(green)%h%Creset %C(bold yellow)%an%Creset  %s  %C(auto)%d%Creset %C(magenta)%ad (%ar)%Creset
 [log]
