@@ -10,6 +10,11 @@ if [ -f .bashrc.local ]; then
 	. .bashrc.local
 fi
 
+# Exit if not interactive shell
+if [ -z "$PS1" ]; then
+   return
+fi
+
 # User specific aliases and functions
 
 alias l='ls -l'
