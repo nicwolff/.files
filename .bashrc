@@ -26,7 +26,7 @@ alias ch='perl -pi -e s#\!:1#\!:2#g \!:3'
 alias rn2n='perl -pi -e s#\\r\\n#\\n#g'
 alias r2n='perl -pi -e s#\\r#\\n#g'
 alias f='find . -type f | xargs grep'
-alias ps='ps ax -Ho pid,user,command'
+if ! alias ps > /dev/null 2>&1; then alias ps='ps ax -Ho pid,user,command'; fi
 alias czt='curl \!:1 | tar xzf -'
 alias gg='git grep'
 alias tig='env EDITOR=rmate tig'
