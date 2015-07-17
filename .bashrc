@@ -44,6 +44,8 @@ alias xr='xargs rmate'
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
 
+export EDITOR=vi
+
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
