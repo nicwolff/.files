@@ -50,6 +50,7 @@ export EDITOR=vi
 
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
+export HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s histappend
 
 export IGNOREEOF=2
