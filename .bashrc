@@ -59,7 +59,7 @@ export PYTHONSTARTUP=~/.pystartup
 
 export PROMPT_HOSTNAME=${NICKNAME-$HOSTNAME}
 printf "\033]0;%s\007" "$PROMPT_HOSTNAME"
-PROMPT_COMMAND='history -a;__git_ps1 "\[\e[0;32m\]$PROMPT_HOSTNAME: \[\e[1;32m\]\W\[\e[0;33m\]" " \[\e[1;32m\]\\\$\[\e[m\] "'
+PROMPT_COMMAND='history -a;__git_ps1 "\n\[\e[0;32m\]$PROMPT_HOSTNAME: \[\e[1;32m\]\W\[\e[0;33m\]" \\\n"\[\e[1;32m\]\\\$\[\e[m\] "'
 
 LS_COLORS='no=00:fi=00:di=01;36:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32';
 export LS_COLORS
