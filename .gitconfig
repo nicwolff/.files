@@ -14,13 +14,14 @@
 	fm = fetch origin master:master
 	br = branch
 	cp = cherry-pick
+	fs = ! git fetch && git br -d -r origin/staging
 	cm = commit -m
 	ci = commit -a -m
 	pad = add -p
 	mn = merge --no-ff
 	dc = diff --cached
 	amend = commit -a --amend -C HEAD
-    ar = ! git add . && git rebase --continue
+	ar = ! git add . && git rebase --continue
 	pop = stash pop
 	dw = diff -w
 	dww = diff -w --color-words
@@ -29,7 +30,7 @@
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
 	blast = ! [ `git symbolic-ref HEAD` != refs/heads/develop ] && git co -f && git co develop && git branch -D '@{-1}'
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
-    pf = push -f
+	pf = push -f
 	fp = format-patch
 	ml = merge '@{-1}'
 	md = ! git checkout develop && git merge --no-ff '@{-1}'
