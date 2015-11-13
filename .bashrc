@@ -44,6 +44,18 @@ alias bench='hmperl -Ilib -MBenchmark'
 alias jdm='git diff -U1 master... | jiradiff.pl'
 alias xr='xargs rmate'
 
+rebase-all () {
+    old=`git rev-parse --abbrev-ref HEAD`
+    stashed=`git stash`
+    for b in $(git branch|grep -- -|cut -c3-)
+    do
+        git checkout $b && git rebase origin/develop || (git rebase --abort && echo Could not rebase $b)
+        echo
+    done
+    git checkout $old
+    if [ "$stashed" != "No local changes to save" ]; then git stash pop; fi
+}
+
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
 
