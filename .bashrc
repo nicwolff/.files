@@ -56,7 +56,7 @@ rebase-all () {
     if [ "$stashed" != "No local changes to save" ]; then git stash pop; fi
 }
 
-source ~/.git-completion.sh
+source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
 export EDITOR=vi
