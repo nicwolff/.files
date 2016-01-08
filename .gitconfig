@@ -89,5 +89,7 @@
 	conflictstyle = diff3
 [include]
 	path = .gitconfig.local
+[credential]
+	helper = osxkeychain
 [rebase]
 	autostash = true
