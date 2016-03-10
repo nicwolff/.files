@@ -56,6 +56,8 @@ rebase-all () {
     if [ "$stashed" != "No local changes to save" ]; then git stash pop; fi
 }
 
+errcolor()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[93m&\e[m,'>&2)3>&1
+
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
