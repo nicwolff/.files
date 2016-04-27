@@ -57,6 +57,7 @@ rebase-all () {
 }
 
 errcolor()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[93m&\e[m,'>&2)3>&1
+logcolor()(set -o pipefail;"$@" 2>&1>&3|sed $'s#DEBUG#\x1b[93m&#; s#INFO#\x1b[m&#; s#ERROR#\x1b[91m&#;' >&2) 3>&1
 
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
