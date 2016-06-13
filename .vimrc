@@ -16,3 +16,9 @@ set expandtab
 
 " now show invisibles with :set list, hide with :set nolist
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" show line numbers
+set number
+
+" relative to current line
+set relativenumber
