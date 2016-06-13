@@ -49,7 +49,7 @@ rebase-all () {
     stashed=`git stash`
     for b in $(git branch|grep -- -|cut -c3-)
     do
-        git checkout $b && git rebase origin/develop || (git rebase --abort && echo Could not rebase $b)
+        git checkout $b && git rebase origin/develop && git push --force || (git rebase --abort && echo Could not rebase $b)
         echo
     done
     git checkout $old
