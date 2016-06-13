@@ -71,8 +71,6 @@ shopt -s histappend
 
 export IGNOREEOF=2
 
-export PYTHONSTARTUP=~/.pystartup
-
 export PROMPT_HOSTNAME=${NICKNAME-$HOSTNAME}
 printf "\033]0;%s\007" "$PROMPT_HOSTNAME"
 PROMPT_COMMAND='history -a;__git_ps1 "\n\[\e[0;32m\]$PROMPT_HOSTNAME: \[\e[1;32m\]\W\[\e[0;33m\]" \\\n"\[\e[1;32m\]\\\$\[\e[m\] "'
