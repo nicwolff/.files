@@ -59,6 +59,7 @@
 	mnemonicprefix = true
 	color-words = true
 	context = 1
+	compactionHeuristic = true
 [color]
 	diff = always
 	status = auto
@@ -66,7 +67,7 @@
 	ui = auto
 [color "branch"]
 	current = cyan bold
-	local = white 
+	local = white
 	remote = green
 [color "diff"]
 	meta = yellow
@@ -93,3 +94,6 @@
 	helper = osxkeychain
 [rebase]
 	autostash = true
+	autosquash = true
+[fetch]
+	prune = true
