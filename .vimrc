@@ -22,3 +22,6 @@ set number
 
 " relative to current line
 set relativenumber
+
+" keep current line in the middle of the window
+set scrolloff=999
