@@ -97,3 +97,5 @@
 	autosquash = true
 [fetch]
 	prune = true
+[clean]
+	requireForce = false
