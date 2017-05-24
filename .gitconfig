@@ -60,7 +60,8 @@
 	mnemonicprefix = true
 	color-words = true
 	context = 1
-	compactionHeuristic = true
+	compactionHeuristic = on
+	indentHeuristic = on
 [color]
 	diff = always
 	status = auto
