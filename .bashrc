@@ -32,7 +32,7 @@ alias gg='git grep'
 alias tig='env EDITOR=rmate tig'
 alias tp=tig-pick
 alias reftig='git reflog | perl -pe "s/\e\[?.*?[\@-~]//g" | cut -c 1-7 | tig --stdin'
-alias co='select br in $(git br|grep -v "("|cut -c3-); do git co $br; break; done'
+alias co='select br in $(git recent); do git co $br; break; done'
 alias coo='select br in $(git br -r|grep -v "("|grep -v HEAD|cut -c3-|sed "s/^origin.//"); do git co $br; break; done'
 alias lmate='rmate lib/\!:1:as#::#/#.pm'
 alias ma='git diff --name-only HEAD | xargs mate'
