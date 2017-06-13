@@ -48,7 +48,7 @@ alias xr='xargs rmate'
 rebase-all () {
     old=`git rev-parse --abbrev-ref HEAD`
     stashed=`git stash`
-    for b in $(git branch|grep -- -|cut -c3-)
+    for b in $(git branch --format '%(authorname) %(refname:short)' | sed -ne "s/^`git config --get user.name` //p" | grep -- -)
     do
         git checkout $b && git rebase origin/develop && git push --force || (git rebase --abort && echo Could not rebase $b)
         echo
