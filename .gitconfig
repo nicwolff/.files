@@ -47,6 +47,7 @@
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
 	remotes = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
+	ls-migrations = ! git diff --name-only  master..staging */migrations
 [core]
 	whitespace = fix
 	pager = less -S
