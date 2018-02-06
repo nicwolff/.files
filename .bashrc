@@ -44,6 +44,7 @@ alias rmd='( git diff --name-only develop... ; git diff --name-only HEAD ) | sor
 alias bench='hmperl -Ilib -MBenchmark'
 alias jdm='git diff -U1 master... | jiradiff.pl'
 alias xr='xargs rmate'
+alias so='[ "$?" -eq 0 ]'
 
 rebase-all () {
     old=`git rev-parse --abbrev-ref HEAD`
