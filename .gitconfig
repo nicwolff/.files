@@ -38,6 +38,7 @@
 	lh = log -n 10
 	lp = log -p -n 10
 	lg = log --graph --all
+	lgs = log --graph --all --simplify-by-decoration
 	rh = reset HEAD^
 	rhh = reset --hard HEAD^
 	r5 = rebase -i -p HEAD~5
