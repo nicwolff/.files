@@ -48,7 +48,7 @@
 	rh = reset HEAD^
 	rhh = reset --hard HEAD^
 	st = status -sb
-	this = ! git init && git add . && git commit -m \"Initial commit\"
+	this = ! git init && git add . && git commit --allow-empty -m \"Initial commit\"
 	up = ! git stash && git fetch origin develop:develop && git rebase -p develop && git stash pop
 [core]
 	whitespace = fix
