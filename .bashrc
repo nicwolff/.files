@@ -48,6 +48,8 @@ logcolor()(set -o pipefail;"$@" 2>&1>&3|sed $'s#DEBUG#\x1b[93m&#; s#INFO#\x1b[m&
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 export EDITOR=vi
 
 export GOPATH=/Volumes/Develop/Go
