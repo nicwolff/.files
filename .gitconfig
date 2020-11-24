@@ -4,47 +4,34 @@
 [alias]
 	amend = commit -a --amend -C HEAD
 	ar = ! git add . && git rebase --continue
-	back = checkout '@{-2}'
 	blast = ! DEFAULT=`git default-branch` bash -c '[ `git current-branch` != "$DEFAULT" ] && git co -f && git co "$DEFAULT"' && git delete-last
 	br = branch
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
-	cb = ! sh -c 'git checkout --no-track -b $1 origin/develop' -
 	cf = checkout -f
 	ci = commit -a -m
 	cm = commit -m
 	co = checkout
 	cp = cherry-pick
-	ct = ! git fetch && git checkout -t
 	current-branch = symbolic-ref --short HEAD
 	dc = diff --cached
-	dd = diff -w -U1 origin/develop...
 	default-branch = ! basename $(git symbolic-ref refs/remotes/origin/HEAD)
 	delete-last = branch -D '@{-1}'
 	dl = branch -D '@{-1}'
 	dm = diff -w -U1 origin/master...
 	dw = diff -w
 	dww = diff -w --color-words
-	fd = fetch origin develop:develop
 	fm = fetch origin master:master
 	fo = ! sh -c 'git fetch origin $1:$1' -
 	fp = format-patch
-	fs = ! git fetch && git br -d -r origin/staging
 	lg = log --graph --all
 	lgs = log --graph --all --simplify-by-decoration
 	lh = log -n 10
 	lp = log -p -n 10
-	ls-migrations = ! git diff --name-only  master..staging */migrations
-	md = ! git checkout develop && git merge --no-ff '@{-1}'
-	ml = merge '@{-1}'
-	mm = ! git checkout master && git merge --no-ff '@{-1}'
-	mn = merge --no-ff
 	pad = add -p
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
 	pf = push -f
 	pop = stash pop
-	pr = pull --rebase
-	r10 = rebase -i -p HEAD~10
-	r5 = rebase -i -p HEAD~5
+	pup = ! git up && git rebase master && git pf
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
 	recent = for-each-ref --count=25 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 	remotes = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
@@ -52,7 +39,6 @@
 	rhh = reset --hard HEAD^
 	st = status -sb
 	this = ! git init && git add . && git commit --allow-empty -m \"Initial commit\"
-	up = ! git stash && git fetch origin develop:develop && git rebase -p develop && git stash pop
 [core]
 	whitespace = fix
 	pager = less -S
