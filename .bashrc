@@ -37,6 +37,7 @@ alias rmm='git branch --all --merged remotes/origin/master | egrep -v "develop|s
 alias so='[ "$?" -eq 0 ]'
 alias scp='rsync --archive --xattrs --acls --progress --rsh="ssh"'
 alias vmshell='docker run -it --rm --privileged --pid=host justincormack/nsenter1'
+alias dcup='fxx(){ docker-compose up "$@" && docker-compose stop; unset -f fxx; }; fxx'
 
 function cheat() {
   curl cht.sh/$1

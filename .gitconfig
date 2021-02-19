@@ -7,6 +7,7 @@
 	blast = ! DEFAULT=`git default-branch` bash -c '[ `git current-branch` != "$DEFAULT" ] && git co -f && git co "$DEFAULT"' && git delete-last
 	br = branch
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
+	cb = checkout -b
 	cf = checkout -f
 	ci = commit -a -m
 	cm = commit -m
@@ -16,6 +17,7 @@
 	dc = diff --cached
 	default-branch = ! basename $(git symbolic-ref refs/remotes/origin/HEAD)
 	delete-last = branch -D '@{-1}'
+	delete-merged = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
 	dl = branch -D '@{-1}'
 	dm = diff -w -U1 origin/master...
 	dw = diff -w
