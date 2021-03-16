@@ -97,3 +97,5 @@
 	requireForce = false
 [tag]
 	sort = version:refname
+[include]
+	path = .gitconfig.secrets
