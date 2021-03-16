@@ -33,7 +33,7 @@
 	pd = ! git push --delete origin `git rev-parse --abbrev-ref HEAD`
 	pf = push -f
 	pop = stash pop
-	pup = ! git up && git rebase master && git pf
+	pup = ! DEFAULT=`git default-branch` bash -c 'git up && git rebase "$DEFAULT" && git pf'
 	rd = ! git ls-files -z --deleted | xargs -0 git rm
 	recent = for-each-ref --count=25 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 	remotes = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %09%(authorname) %09%(refname:short)'
