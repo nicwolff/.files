@@ -99,3 +99,5 @@
 	sort = version:refname
 [include]
 	path = .gitconfig.secrets
+[git-up "fetch"]
+	prune = true
