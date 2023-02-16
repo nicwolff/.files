@@ -55,6 +55,8 @@ export EDITOR=vi
 
 export GOPATH=/Volumes/Develop/Go
 
+export XDG_CONFIG_HOME=/Users/nicwolff/.config
+
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 export HISTTIMEFORMAT="%d/%m/%y %T "
