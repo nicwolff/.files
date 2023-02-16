@@ -101,3 +101,5 @@
 	path = .gitconfig.secrets
 [git-up "fetch"]
 	prune = true
+[init]
+	defaultBranch = main
