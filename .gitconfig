@@ -83,7 +83,7 @@
 [branch]
 	autosetupmerge = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [include]
 	path = .gitconfig.local
 [credential]
