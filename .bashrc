@@ -39,6 +39,10 @@ alias scp='rsync --archive --xattrs --acls --progress --rsh="ssh"'
 alias vmshell='docker run -it --rm --privileged --pid=host justincormack/nsenter1'
 alias dcup='docker-compose up --abort-on-container-exit'
 
+function url() {
+	curl -s https://director.prod.hearstapps.com/url -G -d url=$1 | jq
+}
+
 function cheat() {
   curl cht.sh/$1
 }
