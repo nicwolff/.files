@@ -38,6 +38,8 @@ alias so='[ "$?" -eq 0 ]'
 alias scp='rsync --archive --xattrs --acls --progress --rsh="ssh"'
 alias vmshell='docker run -it --rm --privileged --pid=host justincormack/nsenter1'
 alias dcup='docker-compose up --abort-on-container-exit'
+alias lint="docker-compose run --rm --no-deps ${PWD##*/}-test sh -c 'flake8 && isort --check-only --diff .'"
+
 
 function url() {
 	curl -s https://director.prod.hearstapps.com/url -G -d url=$1 | jq
