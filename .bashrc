@@ -41,6 +41,11 @@ alias dcup='docker-compose up --abort-on-container-exit'
 alias lint='docker-compose run --rm --no-deps ${PWD##*/}-test sh -c "flake8 . && isort --check-only --diff ."'
 
 
+function timecurl() {
+    curl -L -w "time_namelookup: %{time_namelookup}\ntime_connect: %{time_connect}\ntime_appconnect: %{time_appconnect}\ntime_pretransfer: %{time_pretransfer}\ntime_redirect: %{time_redirect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" "$1"
+
+}
+
 function url() {
 	curl -s https://director.prod.hearstapps.com/url -G -d url=$1 | jq
 }
