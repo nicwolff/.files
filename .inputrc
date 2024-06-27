@@ -4,3 +4,4 @@ set completion-ignore-case on
 set completion-map-case on
 set match-hidden-files off
 set show-all-if-ambiguous on
+set revert-all-at-newline on
