@@ -57,6 +57,8 @@
 	context = 1
 	compactionHeuristic = on
 	indentHeuristic = on
+	colormoved = "default"
+	colormovedws = "allow-indentation-change"
 [color]
 	diff = always
 	status = auto
@@ -77,12 +79,14 @@
 	untracked = cyan
 [push]
 	default = current
+	autoSetupRemote = true
 [tig]
 	tab-size = 4
 [advice]
 	statusHints = false
 [branch]
 	autosetupmerge = true
+	sort = -committerdate
 [merge]
 	conflictstyle = zdiff3
 [include]
