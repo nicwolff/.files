@@ -55,10 +55,9 @@
 	mnemonicprefix = true
 	color-words = true
 	context = 1
-	compactionHeuristic = on
-	indentHeuristic = on
 	colormoved = "default"
 	colormovedws = "allow-indentation-change"
+	algorithm = "histogram"
 [color]
 	diff = always
 	status = auto
