@@ -47,7 +47,7 @@ function timecurl() {
 }
 
 function url() {
-	curl -s https://director.prod.hearstapps.com/url -G -d url=$1 | jq
+	curl -s https://director.kubeprod.hearstapps.com/url -G -d url=$1 | jq
 }
 
 function cheat() {
