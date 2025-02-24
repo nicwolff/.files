@@ -63,6 +63,9 @@ source ~/.git-prompt.sh
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+export UV_SYSTEM_PYTHON=1
+export UV_BREAK_SYSTEM_PACKAGES=1
+
 export EDITOR=vi
 
 export GOPATH=/Volumes/Develop/Go
