@@ -108,3 +108,9 @@
 	prune = true
 [init]
 	defaultBranch = main
+[maintenance]
+	repo = /Volumes/Develop/voltron
+[help]
+	autocorrect = prompt
+[rerere]
+	enabled = true
