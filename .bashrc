@@ -27,12 +27,7 @@ alias -- -='cd -'
 alias ..='cd ..'
 alias h='history'
 alias hg='history | grep'
-alias ch='perl -pi -e s#\!:1#\!:2#g \!:3'
-alias rn2n='perl -pi -e s#\\r\\n#\\n#g'
-alias r2n='perl -pi -e s#\\r#\\n#g'
-alias f='find . -type f | xargs grep'
 if ! alias ps > /dev/null 2>&1; then alias ps='ps ax -Ho pid,user,command'; fi
-alias czt='curl \!:1 | tar xzf -'
 alias gg='git grep'
 alias ggf='git grep --heading --break -n -W'
 alias reftig='git reflog | perl -pe "s/\e\[?.*?[\@-~]//g" | cut -c 1-7 | tig --stdin'
@@ -45,7 +40,10 @@ alias vmshell='docker run -it --rm --privileged --pid=host justincormack/nsenter
 alias dcup='docker-compose up --abort-on-container-exit'
 alias lint='docker-compose run --rm --no-deps ${PWD##*/}-test sh -c "flake8 . && isort --check-only --diff ."'
 alias usecontext='select ctx in $(kubectl config get-contexts -o name); do kubectl config use-context $ctx; break; done'
-
+ch() { perl -pi -e "s#$1#$2#g" "$3"; }
+rn2n() { perl -pi -e 's#\r\n#\n#g' "$@"; }
+r2n() { perl -pi -e 's#\r#\n#g' "$@"; }
+czt() { curl "$1" | tar xzf -; }
 
 function timecurl() {
     curl -L -w "time_namelookup: %{time_namelookup}\ntime_connect: %{time_connect}\ntime_appconnect: %{time_appconnect}\ntime_pretransfer: %{time_pretransfer}\ntime_redirect: %{time_redirect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" "$1"
