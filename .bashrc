@@ -58,6 +58,14 @@ function cheat() {
   curl cht.sh/$1
 }
 
+function brew() {
+    if [[ "$1" == "update" && -n "$2" ]]; then
+        command brew upgrade "${@:2}"
+    else
+        command brew "$@"
+    fi
+}
+
 errcolor()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[93m&\e[m,'>&2)3>&1
 logcolor()(set -o pipefail;"$@" 2>&1>&3|sed $'s#DEBUG#\x1b[93m&#; s#INFO#\x1b[m&#; s#ERROR#\x1b[91m&#;' >&2) 3>&1
 
