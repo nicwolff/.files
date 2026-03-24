@@ -73,6 +73,7 @@ source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_DOWNLOAD_CONCURRENCY=1
 
 export UV_SYSTEM_PYTHON=1
 export UV_BREAK_SYSTEM_PACKAGES=1
