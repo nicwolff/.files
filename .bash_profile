@@ -17,3 +17,6 @@ PARENT_CMD=$(/bin/ps -ocommand= -p $PPID)
 if [ "${PARENT_CMD:0:5}" = "sshd:" ]; then
 	{ notidle 2>&3 & } 3>&2 2>/dev/null
 fi
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
