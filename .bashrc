@@ -1,5 +1,10 @@
 # .bashrc
 
+# PS4='+ $EPOCHREALTIME\011 '
+# exec 5> /tmp/command.txt
+# BASH_XTRACEFD="5"
+# set -x
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	source /etc/bashrc
@@ -86,3 +91,4 @@ PROMPT_COMMAND='update_terminal_cwd;history -a;__git_ps1 "\n\[\e[0;32m\]In \[\e[
 LS_COLORS='no=00:fi=00:di=01;36:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32';
 export LS_COLORS
 
+set +x
